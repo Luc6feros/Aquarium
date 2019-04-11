@@ -21,16 +21,19 @@ public class Poisson {
 	String nom;
 	Sexe sexe;
 	Race race;
+	int coordX;
+	int coordY;
 	int pv;
 	
-	public Poisson(TypePoisson t, Race r, Sexe s, String n, int pointVie) {
+	public Poisson(TypePoisson t, Race r, Sexe s, String n, int pointVie, int x, int y) {
 		type = t;
 		race = r;
 		sexe = s;
 		nom = n;
 		pv = pointVie;
+		coordX = x;
+		coordY = y;
 	}
-
 	public void mange(Poisson p, Aquarium a) {
 		if (this.type.equals(TypePoisson.CARNIVORE)) {
 			a.listePoisson.remove(p);

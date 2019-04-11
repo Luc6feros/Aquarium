@@ -17,6 +17,7 @@ public class Aquarium {
 
 
 	}
+	
 
 	public int nbAlgue() {
 
@@ -27,26 +28,26 @@ public class Aquarium {
 
 		return this.listePoisson.size();
 	}
-	public void ajoutPoisson(Race r, Sexe s, String nom, int pv) {
+	public void ajoutPoisson(Race r, Sexe s, String nom, int pv,int x, int y) {
 
 		switch (r) {
 		case BAR:
-			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv, x, y));
 			break;
 		case SOLE:
-			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv, x, y));
 			break;
 		case CARPE:
-			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.HERBIVORES, r, s, nom, pv,x,  y));
 			break;
 		case MEROU:
-			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv,x, y));
 			break;
 		case POISSONCLOWN:
-			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv,x, y));
 			break;
 		case THON:
-			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv));
+			listePoisson.add(new Poisson(TypePoisson.CARNIVORE, r, s, nom, pv,x,y));
 			break;
 		default:
 			break;
@@ -54,7 +55,9 @@ public class Aquarium {
 		}
 	}
 	public void removePoisson(Poisson p) {
-		listePoisson.remove(p);
+		if(!listePoisson.isEmpty()) {
+			listePoisson.remove(p);
+		}
 
 	}
 	public void ajoutAlgue(int pv) {
@@ -63,9 +66,7 @@ public class Aquarium {
 
 	public int removeAlgue(Algue al) {
 
-		Iterator<Algue> iA = listeAlgue.listIterator();
-
-		if(!iA.next().equals(null)) {
+		if(!listeAlgue.isEmpty()) {
 			listeAlgue.remove(al);
 			return 1;
 		}

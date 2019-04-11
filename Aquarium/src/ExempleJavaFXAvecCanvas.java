@@ -113,6 +113,7 @@ public class ExempleJavaFXAvecCanvas extends Application {
 				can.getGraphicsContext2D().fillRect(0, 0, 10, 10);
 			}
 		});
+		
 
 		// Dans le cas de l'image, on veut compter le nombre de clics
 		// Dans cet exemple, on passe par un objet d'une classe nommée CibleMouvante qui
